@@ -30,6 +30,15 @@ Plugin 'fatih/vim-go'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'bronson/vim-crosshairs'
 Plugin 'slim-template/vim-slim'
+Plugin 'honza/vim-snippets'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'leafOfTree/vim-vue-plugin'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -63,13 +72,17 @@ nnoremap <C-down> :resize +5<cr>
 nnoremap <C-up> :resize -5<cr>
 nnoremap <C-[> :vertical resize +5<cr>
 nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabnext<CR>
-nnoremap tk  :tabprev<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
 nnoremap tl  :tablast<CR>
 nnoremap tt  :tabedit<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 nnoremap ssx :shell<CR>
+nnoremap tg :Tags<CR>
+nnoremap fl :Files<CR>
+nnoremap fz :FZF<CR>
+nnoremap tn :tn<CR>
 
 :imap jj <Esc>
 :map ff zf}
@@ -77,8 +90,10 @@ nnoremap ssx :shell<CR>
 :map rf zf end
 :map ro zo
 au BufRead,BufNewFile *.template setfiletype json
+au BufRead,BufNewFile *.decorator setfiletype ruby
 autocmd BufWritePre * :%s/\s\+$//e
 
 highlight CursorColumn cterm=NONE ctermbg=grey ctermfg=NONE guibg=black
 highlight CursorLine cterm=NONE ctermbg=grey ctermfg=NONE guibg=black
 nnoremap  xxx :set cursorline! cursorcolumn!<CR>
+set rtp+=/usr/local/opt/fzf
