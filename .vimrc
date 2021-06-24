@@ -62,6 +62,7 @@ nnoremap <C-]> :vertical resize -5<cr>
 nnoremap <C-down> :resize +5<cr>
 nnoremap <C-up> :resize -5<cr>
 nnoremap <C-[> :vertical resize +5<cr>
+nnoremap ss  :%!python -m json.tool<CR>
 nnoremap th  :tabfirst<CR>
 nnoremap tj  :tabnext<CR>
 nnoremap tk  :tabprev<CR>
